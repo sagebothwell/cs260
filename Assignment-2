@@ -1,1 +1,38 @@
 
+To make a queue, we will need a function for enqeuing (adding stuff to the list) and deqeuing (removing stuff from the list). 
+These functions should add stuff to the back of the list and take from the front (LIFO). 
+
+For the queue to work properly, we need to have a head node. This is the front of the queue where stuff will be taken out. 
+It might also be good to have a tail node, which is the back of the node where stuff is added. Each node should have a next 
+pointer which points to the next node in the list (or to NULL if we are at the tail) and should have some value which is stored 
+in the node. I think Im going to make the value a string so that I dont have to do error handling on it like I would for an int. 
+
+
+How to add anywhere in a list:
+
+if(n = 0)
+	Just add at the tail like normal
+	Return
+if(n is greater than the length of the list)
+	Do an error mssg
+	Return
+Make a new integer i, set it to zero
+Make a new node pointer, new_node
+	Make a new node pointer called current
+	Assign desired value to new_node
+	Set current to head
+	while (i is less than n)
+		Set current to current next
+		Add 1 to i
+	Set new_node next to current
+	Set i to 0 again
+	Set current to head again
+	while(i is less than n-1)
+		Set current to current next
+		Add 1 to i
+	Set current next to  new_node
+	Add 1 to the length of the whole set
+
+For this function, we need to have the function for adding nodes to the back of the list, other than that, it would all be unique 
+code. We will need to know the total length of the list as well as where the tail is. I can store both of these as private variables 
+in the queue class. 
